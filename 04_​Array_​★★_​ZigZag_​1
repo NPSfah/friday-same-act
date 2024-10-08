@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int i,n,x,y,minzigzag = 1e9,maxzigzag = -1e9,minzagzig = 1e9,maxzagzig = -1e9;
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        cin>>x>>y;
+        if(i%2 == 0)
+        {
+            minzigzag = min(x,minzigzag); 
+            maxzigzag = max(y,maxzigzag);
+            minzagzig = min(y,minzagzig); 
+            maxzagzig = max(x,maxzagzig);
+        }else{
+            minzigzag = min(y,minzigzag); 
+            maxzigzag = max(x,maxzigzag);
+            minzagzig = min(x,minzagzig); 
+            maxzagzig = max(y,maxzagzig);
+        }
+    }
+    string cmd;
+    cin>>cmd;
+    if(cmd == "Zig-Zag")
+    {
+        cout<<minzigzag<<" "<<maxzigzag;
+    }else{
+        cout<<minzagzig<<" "<<maxzagzig;
+    }
+    return 0;
+}
